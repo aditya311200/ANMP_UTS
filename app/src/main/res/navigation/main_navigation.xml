@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_navigation"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.uts_160419051.view.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_addRegisterFragment"
+            app:destination="@id/addRegisterFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_kulinerListFragment"
+            app:destination="@id/kulinerListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addRegisterFragment"
+        android:name="com.example.uts_160419051.view.RegisterFragment"
+        android:label="Registrasi"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/kulinerListFragment"
+        android:name="com.example.uts_160419051.view.KulinerListFragment"
+        android:label="Kuliner Ubaya"
+        tools:layout="@layout/fragment_kuliner_list">
+        <action
+            android:id="@+id/action_kulinerListFragment_to_detailKulinerFragment"
+            app:destination="@id/detailKulinerFragment" />
+        <action
+            android:id="@+id/action_kulinerListFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailKulinerFragment"
+        android:name="com.example.uts_160419051.view.DetailKulinerFragment"
+        android:label="Detail Tempat Makan"
+        tools:layout="@layout/fragment_detail_kuliner">
+        <action
+            android:id="@+id/action_detailKulinerFragment_to_reviewListFragment"
+            app:destination="@id/reviewListFragment" />
+        <action
+            android:id="@+id/action_detailKulinerFragment_to_addReviewFragment"
+            app:destination="@id/addReviewFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.uts_160419051.view.ProfileFragment"
+        android:label="Profil"
+        tools:layout="@layout/fragment_profile">
+        <action
+            android:id="@+id/action_profileFragment_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.example.uts_160419051.view.ChangePasswordFragment"
+        android:label="Ubah Password"
+        tools:layout="@layout/fragment_change_password" />
+    <fragment
+        android:id="@+id/reviewListFragment"
+        android:name="com.example.uts_160419051.view.ReviewListFragment"
+        android:label="Review"
+        tools:layout="@layout/fragment_review_list"/>
+    <fragment
+        android:id="@+id/addReviewFragment"
+        android:name="com.example.uts_160419051.view.AddReviewFragment"
+        android:label="Tambah Review"
+        tools:layout="@layout/fragment_review_add" />
+</navigation>

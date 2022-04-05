@@ -3,36 +3,40 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@+id/itemHome">
 
     <fragment
-        android:id="@+id/loginFragment"
+        android:id="@+id/itemLogout"
         android:name="com.example.uts_160419051.view.LoginFragment"
         android:label="Login"
         tools:layout="@layout/fragment_login">
         <action
-            android:id="@+id/action_loginFragment_to_addRegisterFragment"
+            android:id="@+id/actionRegisterFragment"
             app:destination="@id/addRegisterFragment" />
         <action
-            android:id="@+id/action_loginFragment_to_kulinerListFragment"
-            app:destination="@id/kulinerListFragment" />
+            android:id="@+id/actionKulinerListFragment"
+            app:destination="@id/itemHome" />
     </fragment>
     <fragment
         android:id="@+id/addRegisterFragment"
         android:name="com.example.uts_160419051.view.RegisterFragment"
         android:label="Registrasi"
-        tools:layout="@layout/fragment_register" />
+        tools:layout="@layout/fragment_register" >
+        <action
+            android:id="@+id/actionLoginFragment"
+            app:destination="@id/itemLogout" />
+    </fragment>
     <fragment
-        android:id="@+id/kulinerListFragment"
+        android:id="@+id/itemHome"
         android:name="com.example.uts_160419051.view.KulinerListFragment"
         android:label="Kuliner Ubaya"
         tools:layout="@layout/fragment_kuliner_list">
         <action
-            android:id="@+id/action_kulinerListFragment_to_detailKulinerFragment"
+            android:id="@+id/actionDetailKulinerFragment"
             app:destination="@id/detailKulinerFragment" />
         <action
-            android:id="@+id/action_kulinerListFragment_to_profileFragment"
-            app:destination="@id/profileFragment" />
+            android:id="@+id/action_kulinerListFragment_to_loginFragment"
+            app:destination="@id/itemLogout" />
     </fragment>
     <fragment
         android:id="@+id/detailKulinerFragment"
@@ -40,19 +44,19 @@
         android:label="Detail Tempat Makan"
         tools:layout="@layout/fragment_detail_kuliner">
         <action
-            android:id="@+id/action_detailKulinerFragment_to_reviewListFragment"
+            android:id="@+id/actionReviewListFragment"
             app:destination="@id/reviewListFragment" />
         <action
-            android:id="@+id/action_detailKulinerFragment_to_addReviewFragment"
+            android:id="@+id/actionAddReviewFragment"
             app:destination="@id/addReviewFragment" />
     </fragment>
     <fragment
-        android:id="@+id/profileFragment"
+        android:id="@+id/itemProfil"
         android:name="com.example.uts_160419051.view.ProfileFragment"
         android:label="Profil"
         tools:layout="@layout/fragment_profile">
         <action
-            android:id="@+id/action_profileFragment_to_changePasswordFragment"
+            android:id="@+id/actionChangePasswordFragment"
             app:destination="@id/changePasswordFragment" />
     </fragment>
     <fragment

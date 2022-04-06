@@ -4,12 +4,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.*
 import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.uts_160419051.R
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import kotlinx.android.synthetic.main.activity_main.*
 import java.util.zip.Inflater
 
@@ -24,7 +26,9 @@ class MainActivity : AppCompatActivity() {
 
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.itemLogout
+                R.id.itemLogout,
+                R.id.itemProfil,
+                R.id.registerFragment
             )
         )
 
@@ -35,6 +39,23 @@ class MainActivity : AppCompatActivity() {
 
         bottomNav.setupWithNavController(navController)
 
+        navController.addOnDestinationChangedListener { _, destination, _ ->
+            when (destination.id) {
+                R.id.itemHome -> showNav()
+                R.id.itemProfil -> showNav()
+                else -> hideNav()
+            }
+        }
+    }
+
+    private fun showNav() {
+        bottomNav.visibility = View.VISIBLE
+        navView.visibility = View.VISIBLE
+    }
+
+    private fun hideNav() {
+        bottomNav.visibility = View.GONE
+        navView.visibility = View.GONE
     }
 
 

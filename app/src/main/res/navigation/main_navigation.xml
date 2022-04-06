@@ -12,13 +12,13 @@
         tools:layout="@layout/fragment_login">
         <action
             android:id="@+id/actionRegisterFragment"
-            app:destination="@id/addRegisterFragment" />
+            app:destination="@id/registerFragment" />
         <action
             android:id="@+id/actionKulinerListFragment"
             app:destination="@id/itemHome" />
     </fragment>
     <fragment
-        android:id="@+id/addRegisterFragment"
+        android:id="@+id/registerFragment"
         android:name="com.example.uts_160419051.view.RegisterFragment"
         android:label="Registrasi"
         tools:layout="@layout/fragment_register" >

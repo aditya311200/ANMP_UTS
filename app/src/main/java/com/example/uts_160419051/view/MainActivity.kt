@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
         NavigationUI.setupWithNavController(navView, navController)
 
-        setupActionBarWithNavController(navController!!, appBarConfiguration)
+        setupActionBarWithNavController(navController!!, appBarConfiguration!!)
 
         bottomNav.setupWithNavController(navController)
 
@@ -57,7 +57,6 @@ class MainActivity : AppCompatActivity() {
         bottomNav.visibility = View.GONE
         navView.visibility = View.GONE
     }
-
 
     override fun onSupportNavigateUp(): Boolean {
         return NavigationUI.navigateUp(navController, drawerLayout) || super.onSupportNavigateUp()

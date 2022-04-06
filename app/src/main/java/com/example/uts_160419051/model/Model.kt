@@ -6,7 +6,8 @@ data class Kuliner (
     val deskripsi:String?,
     val jam_buka:String?,
     val jam_tutup:String?,
-    val rating:String?
+    val rating:String?,
+    val url:String?
 )
 
 //data class Review(

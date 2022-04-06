@@ -1,7 +1,5 @@
 package com.example.uts_160419051.view
 
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,10 +7,11 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.uts_160419051.R
 import com.example.uts_160419051.model.Kuliner
+import com.example.uts_160419051.util.loadImageProfile
 import kotlinx.android.synthetic.main.kuliner_list_item.view.*
 
-class KulinerListAdapter(val kulinerList:ArrayList<Kuliner>): RecyclerView.Adapter<KulinerListAdapter.KulinerViewHolder>() {
-    class KulinerViewHolder(var view: View): RecyclerView.ViewHolder(view)
+class KulinerListAdapter(val kulinerList:ArrayList<Kuliner>):RecyclerView.Adapter<KulinerListAdapter.KulinerViewHolder>() {
+    class KulinerViewHolder(var view: View):RecyclerView.ViewHolder(view)
 
     fun updateKulinerList(newKulinerList:List<Kuliner>) {
         kulinerList.clear()
@@ -32,6 +31,7 @@ class KulinerListAdapter(val kulinerList:ArrayList<Kuliner>): RecyclerView.Adapt
         holder.view.txtKulinerBuka.text = kulinerList[position].jam_buka
         holder.view.txtKulinerTutup.text = kulinerList[position].jam_tutup
         holder.view.txtKulinerRating.text = kulinerList[position].rating
+        holder.view.imgLogo.loadImageProfile(kulinerList[position].url.toString(), holder.view.progressBarLogo)
 
         holder.view.btnKulinerDetail.setOnClickListener {
             val id = kulinerList[position].id

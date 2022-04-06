@@ -10,8 +10,9 @@ data class Kuliner (
     val url:String?
 )
 
-//data class Review(
-//    val id:String?,
-//    val nama:String?,
-//    val isi:String?
-//)
+data class Review(
+    val id:String?,
+    val nama:String?,
+    val isi:String?,
+    val url:String?
+)

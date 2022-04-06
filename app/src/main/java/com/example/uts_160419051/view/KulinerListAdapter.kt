@@ -34,8 +34,8 @@ class KulinerListAdapter(val kulinerList:ArrayList<Kuliner>):RecyclerView.Adapte
         holder.view.imgLogo.loadImageProfile(kulinerList[position].url.toString(), holder.view.progressBarLogo)
 
         holder.view.btnKulinerDetail.setOnClickListener {
-            val id = kulinerList[position].id
-            val action = KulinerListFragmentDirections.actionDetailKulinerFragment()
+            val id = kulinerList[position].id.toString()
+            val action = KulinerListFragmentDirections.actionDetailKulinerFragment(id)
             Navigation.findNavController(it).navigate(action)
         }
     }

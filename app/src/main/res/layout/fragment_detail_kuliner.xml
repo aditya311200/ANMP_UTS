@@ -13,7 +13,7 @@
         <ImageView
             android:id="@+id/imgFoto"
             android:layout_width="0dp"
-            android:layout_height="275sp"
+            android:layout_height="275dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -51,7 +51,7 @@
             android:text="Rating :"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDetailAlamat" />
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailDeskripsi" />
 
         <TextView
             android:id="@+id/txtDetailRating"
@@ -63,7 +63,7 @@
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/textView11"
-            app:layout_constraintTop_toBottomOf="@+id/txtDetailAlamat" />
+            app:layout_constraintTop_toBottomOf="@+id/txtDetailDeskripsi" />
 
         <TextView
             android:id="@+id/textView13"
@@ -124,17 +124,6 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent" />
 
-        <TextView
-            android:id="@+id/txtDetailAlamat"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Ini Alamat"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/txtDetailDeskripsi" />
-
         <Button
             android:id="@+id/btnTambahReview"
             style="@style/Widget.MaterialComponents.Button.OutlinedButton"
@@ -147,6 +136,16 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
+
+        <ProgressBar
+            android:id="@+id/progressBarFoto"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/imgFoto"
+            app:layout_constraintEnd_toEndOf="@+id/imgFoto"
+            app:layout_constraintStart_toStartOf="@+id/imgFoto"
+            app:layout_constraintTop_toTopOf="@+id/imgFoto" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

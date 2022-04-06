@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.kuliner_list_item.view.*
 class KulinerListAdapter(val kulinerList:ArrayList<Kuliner>): RecyclerView.Adapter<KulinerListAdapter.KulinerViewHolder>() {
     class KulinerViewHolder(var view: View): RecyclerView.ViewHolder(view)
 
-    fun updateKulinerList(newKulinerList: List<Kuliner>) {
+    fun updateKulinerList(newKulinerList:List<Kuliner>) {
         kulinerList.clear()
         kulinerList.addAll(newKulinerList)
         notifyDataSetChanged()
@@ -34,6 +34,7 @@ class KulinerListAdapter(val kulinerList:ArrayList<Kuliner>): RecyclerView.Adapt
         holder.view.txtKulinerRating.text = kulinerList[position].rating
 
         holder.view.btnKulinerDetail.setOnClickListener {
+            val id = kulinerList[position].id
             val action = KulinerListFragmentDirections.actionDetailKulinerFragment()
             Navigation.findNavController(it).navigate(action)
         }
